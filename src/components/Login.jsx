@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import './Login.css';
+import { UserContext } from '../contexts/UserContext';
 
-function Login({ setUser }) {
+function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const { user, setUser } = useContext(UserContext);
+    
     function doLogin(e) {
         e.preventDefault();
 
